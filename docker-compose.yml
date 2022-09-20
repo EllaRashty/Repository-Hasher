@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  repo:
+    build: ./Repository
+    ports:
+      - "9091:8081"
+  hash:
+    build: ./Hasher
+    ports:
+      - "9092:8081"
