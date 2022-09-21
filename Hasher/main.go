@@ -24,11 +24,11 @@ func Hashing(temp string) string {
 func putHash() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		// var str string
-		resp, _ := client.Get("http://localhost:9091/hasher")
+		resp, _ := client.Get("http://host.docker.internal:9091/hasher")
 		defer resp.Body.Close()
 		json.NewDecoder(resp.Body).Decode(&str)
 		hash := Hashing(str)
-		fmt.Fprintf(w, "amen: %s", hash)
+		fmt.Fprintf(w, "Hash: %s", hash)
 	}
 }
 
