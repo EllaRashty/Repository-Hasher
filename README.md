@@ -13,6 +13,7 @@ git clone https://github.com/EllaRashty/Repository-Hasher.git
 ### Build and run the project with Docker:
 
 Open a terminal window and navigate to the directory where you cloned the project to.
+
 _Run the following command:_
 
 ```bash
