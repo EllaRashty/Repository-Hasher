@@ -43,7 +43,9 @@ http://localhost:9091/input-path
 5. The result should look like this:
 
 <img width="865" alt="image" src="https://user-images.githubusercontent.com/113849701/191591440-d91defad-3e4c-4261-9862-29569b8692f7.png">
+
 - - -
+
 ### 2. Test function  _CheckoutRef(gitRef)_ 
 1. **POST** request 
 2. Type this URL
@@ -57,11 +59,15 @@ http://localhost:9091/checkout
 }
 ```
 <img width="830" alt="image" src="https://user-images.githubusercontent.com/113849701/191591617-90d9051f-cfd6-4cce-b0d2-c205ce5fd5a6.png"> 
+
 4. Click **Send**
+
 5. The result should look like this:
 
 <img width="847" alt="image" src="https://user-images.githubusercontent.com/113849701/191591673-d40c366f-e777-49d4-908b-239b5c01d0eb.png">
+
 - - -
+
 ### 3. Test function  _HashFiles(pathInRepo, ...)_ 
 1. **POST** request 
 2. Type this URL
@@ -73,6 +79,7 @@ http://localhost:9091/hash-path
 "google/go-github"
 ```
 <img width="829" alt="image" src="https://user-images.githubusercontent.com/113849701/191591828-48206663-1c38-4893-8ddd-fbfbf7dd839e.png"> 
+
 4. Click **Send**
 5. Create another **GET** request
 6. Type this URL
@@ -82,6 +89,7 @@ http://localhost:9092/hashing-service
 7. -no body- 
 
 <img width="849" alt="image" src="https://user-images.githubusercontent.com/113849701/191592027-30d2c1fb-4491-405c-8ba4-b8dda8a09ec4.png">
+
 8. Click **Send**
 9. The result should look like this:
 
