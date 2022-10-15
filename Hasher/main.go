@@ -21,25 +21,24 @@ func Hashing(str string) string {
 
 func getSha() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		var str string
+		var strToHash string
 		resp, _ := client.Get("http://host.docker.internal:9091/hash-path")
 		defer resp.Body.Close()
-		json.NewDecoder(resp.Body).Decode(&str)
-		// fmt.Fprintf(w, "str: %s\n", str)
-		hash := Hashing(str)
+		json.NewDecoder(resp.Body).Decode(&strToHash)
+		hash := Hashing(strToHash)
 		fmt.Fprintf(w, "Hash: %s", hash)
 	}
 }
 
 func start(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Port Repository - 9092:8081\n")
+	fmt.Fprintf(w, "Port Hasher - 9092:8081\n")
 }
 
 func handleRequests() {
 	client = &http.Client{Timeout: 10 * time.Second}
 	myRouter := mux.NewRouter().StrictSlash(true)
 
-	myRouter.HandleFunc("/hashing-service", getSha()).Methods("GET")
+	myRouter.HandleFunc("/hashing-service", getSha()).Methods("GET") 
 	myRouter.HandleFunc("/", start)
 	log.Fatal(http.ListenAndServe(":8081", myRouter))
 }
